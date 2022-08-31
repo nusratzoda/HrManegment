@@ -33,13 +33,13 @@ public class EmployeeService
     public Role GetRoleById(int id)
     {
         var role = roles.Find(element => element.Id == id);
-        return roles;
+        return role;
     }
 
      public Experience GetExperienceById(int id)
     {
         var experience = experiences.Find(element => element.Id == id);
-        return experiences;
+        return experience;
     }
     public void Delete(int id)
     {

@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Infrastructure >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Сухайб\\.nuget\\packages\\": {}
@@ -13,11 +50,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Сухайб\\Desktop\\HrManegmetn\\MainApp\\MainApp.csproj",
+      "projectUniqueName": "C:\\Users\\Сухайб\\Desktop\\C#\\HrManegmetn\\MainApp\\MainApp.csproj",
       "projectName": "MainApp",
-      "projectPath": "C:\\Users\\Сухайб\\Desktop\\HrManegmetn\\MainApp\\MainApp.csproj",
+      "projectPath": "C:\\Users\\Сухайб\\Desktop\\C#\\HrManegmetn\\MainApp\\MainApp.csproj",
       "packagesPath": "C:\\Users\\Сухайб\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Сухайб\\Desktop\\HrManegmetn\\MainApp\\obj\\",
+      "outputPath": "C:\\Users\\Сухайб\\Desktop\\C#\\HrManegmetn\\MainApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Сухайб\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -31,7 +68,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Сухайб\\Desktop\\C#\\HrManegmetn\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Сухайб\\Desktop\\C#\\HrManegmetn\\Infrastructure\\Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
