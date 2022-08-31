@@ -1,4 +1,6 @@
 ﻿using Domain.Models;
+
+
 var it = new Department() { Id = 1, Name = "IT" };
 var hr = new Department() { Id = 2, Name = "HR" };
 var finance = new Department() { Id = 3, Name = "Finance" };
@@ -14,8 +16,8 @@ var emp1 =new Employee()
     Id = 1, 
     FirstName = "John", 
     LastName = "Doe", 
-   
-   
+    Department = it, 
+    Address = "123 Main St", 
     Phone = "555-555-5555",
     BirthDate = new DateTime(1980, 1, 1),
     Experiences =  new List<Experience>()
@@ -46,6 +48,8 @@ var emp2 =new Employee()
     Id = 1, 
     FirstName = "Jahonzeb", 
     LastName = "Jahongizoda", 
+    Department = finance, 
+    Address = "123 Main St", 
     Phone = "555-555-5555",
     BirthDate = new DateTime(1980, 1, 1),
     Experiences =  new List<Experience>()
@@ -74,6 +78,7 @@ foreach (var emp in listofEmp)
 {
     Console.WriteLine(new string('*', 50));
     Console.WriteLine($"{emp.FirstName} {emp.LastName}");
+    Console.WriteLine($"{emp.Department.Name}");
     Console.Write("Experiences: ");
     foreach (var exp in emp.Experiences)
     {
